@@ -1,10 +1,10 @@
 #!/bin/sh -x
 IP_ADDRESS=$(ifconfig | grep -E 'inet.[0-9]' | grep -v '127.0.0.1' | awk '{ print $2}')
 
-cd /tmp
 fetch https://github.com/SumGuyV5/iocage-plugin-teamspeak3server/releases/download/3.13.6/teamspeak3-server-3.13.6.1.pkg
 
 pkg install -y teamspeak3-server-3.13.6.1.pkg
+rm teamspeak3-server-3.13.6.1.pkg
 
 sysrc teamspeak_enable="YES"
 service teamspeak start
