@@ -9,10 +9,10 @@ rm teamspeak3-server-3.13.6.1.pkg
 sysrc teamspeak_enable="YES"
 service teamspeak start
 
-#we need to wait for the log files to be built befor we continuing on
+# we need to wait for the log files to be built befor we continuing on
 while [ -z "$(ls -A /var/log/teamspeak)" ]
 do
-    sleep 15
+	sleep 15
 done
 
 echo -e "TeamSpeak3 Server now installed.\n" > /root/PLUGIN_INFO
